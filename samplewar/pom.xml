@@ -11,20 +11,18 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<version.surefire.plugin>2.10</version.surefire.plugin>
-		<version.war.plugin>2.1.1</version.war.plugin>
+		<version.war.plugin>3.2.0</version.war.plugin>
 		<version.jboss.maven.plugin>7.9.Final</version.jboss.maven.plugin>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<!-- EAP version -->
-		<version.jboss.bom.eap>6.4.0.GA</version.jboss.bom.eap>
-
-
+		<version.jboss.bom.eap>7.1.1.GA</version.jboss.bom.eap>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>org.jboss.bom.eap</groupId>
-				<artifactId>jboss-javaee-6.0-with-tools</artifactId>
+				<groupId>org.jboss.bom</groupId>
+				<artifactId>jboss-eap-javaee7-with-tools</artifactId>
 				<version>${version.jboss.bom.eap}</version>
 				<type>pom</type>
 				<scope>import</scope>
@@ -46,30 +44,39 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.jboss.spec.javax.annotation</groupId>
-			<artifactId>jboss-annotations-api_1.1_spec</artifactId>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.jboss.spec.javax.servlet</groupId>
-			<artifactId>jboss-servlet-api_3.0_spec</artifactId>
-			<scope>provided</scope>
+			<groupId>javax.ws.rs</groupId>
+			<artifactId>javax.ws.rs-api</artifactId>
+			<version>2.1</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider -->
 		<dependency>
-			<groupId>org.jboss.spec.javax.ws.rs</groupId>
-			<artifactId>jboss-jaxrs-api_1.1_spec</artifactId>
-			<scope>provided</scope>
+			<groupId>com.fasterxml.jackson.jaxrs</groupId>
+			<artifactId>jackson-jaxrs-json-provider</artifactId>
+			<version>2.9.4</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
 		<dependency>
-			<groupId>org.hibernate.javax.persistence</groupId>
-			<artifactId>hibernate-jpa-2.0-api</artifactId>
-			<scope>provided</scope>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.6.3</version>
 		</dependency>
+
 		<dependency>
-			<groupId>org.jboss.spec.javax.ejb</groupId>
-			<artifactId>jboss-ejb-api_3.1_spec</artifactId>
-			<scope>provided</scope>
-		</dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+        </dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
@@ -83,12 +90,6 @@
 		</dependency>
 
 
-		<!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-web</artifactId>
-			<version>4.3.10.RELEASE</version>
-		</dependency>
 		<!-- https://mvnrepository.com/artifact/de.grundid.opendatalab/geojson-jackson -->
 		<dependency>
 			<groupId>de.grundid.opendatalab</groupId>
@@ -100,12 +101,6 @@
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
 			<version>2.8.1</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.apache.activemq/artemis-jms-client -->
-		<dependency>
-			<groupId>org.apache.activemq</groupId>
-			<artifactId>artemis-jms-client</artifactId>
-			<version>2.4.0</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/javax.enterprise/cdi-api -->
 		<dependency>
