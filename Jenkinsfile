@@ -8,7 +8,7 @@ pipeline {
         }
         stage ('Build') {
             steps {
-                sh 'mvn -f samplewar/pom.xml' 
+                sh 'mvn clean install -f samplewar/pom.xml' 
             }
         }
     }
